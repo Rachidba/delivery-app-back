@@ -1,0 +1,15 @@
+name: Compilation
+
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+        - name: clean
+        run: dotnet clean
+      - name: restore
+        run: dotnet restore
+      - name: Build project
+        run: dotnet build
