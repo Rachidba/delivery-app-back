@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
-        - name: clean
+      - name: clean
         run: dotnet clean
       - name: restore
         run: dotnet restore
