@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace delivery_app_back.Entities
 {
-    [Table("courier")]
+    [Table("couriers")]
     public class Courier : User
     {
         [Column("vehicle")]
