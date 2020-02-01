@@ -13,3 +13,11 @@ jobs:
         run: dotnet restore
       - name: Build project
         run: dotnet build
+      - name: save  bin.zip
+        run: Zip -r ./artifacts/bin.zip bin
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v1        
+        with:
+          name: bin.zip
+          path: ./artifacts/bin.zip
+      
