@@ -5,17 +5,15 @@ jobs:
   build:
     runs-on: windows-2019
     steps:
-      - name: checkout
+      - name: Checkout sources
         uses: actions/checkout@v1
-      - name: clean
+      - name: clean local project
         run: dotnet clean
-      - name: restore
-        run: dotnet restore
       - name: Build project
-        run: dotnet build
-      - name: save  bin.zip
-        run: Zip -r ./artifacts/bin.zip bin
-      - name: Archive artifacts
+        run: |
+          dotnet build
+          7z a ./artifacts/bin.zip bin\
+      - name: Publish Artifacts
         uses: actions/upload-artifact@v1        
         with:
           name: bin.zip
