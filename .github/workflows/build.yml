@@ -13,3 +13,9 @@ jobs:
         run: dotnet restore
       - name: Build project
         run: dotnet build
+      - name: save artifacts bin.zip
+        run: Zip -r ./artifacts/bin.zip bin
+        with:
+          name: bin.zip
+          path: ./artifacts/bin.zip
+      
